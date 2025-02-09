@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Rooms - RentEase</title>
+    <link rel="stylesheet" href="CSS/rooms.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🏠 RentEase</div>
+        <nav>
+            <a href="index.html" class="btn">Home</a>
+            <a href="login.html" class="btn">Log In</a>
+            <a href="signup.html" class="btn">Sign Up</a>
+        </nav>
+    </header>
+    <main>
+        <section class="rooms-hero">
+            <h1>Discover Your Perfect Space</h1>
+            <p>Browse through our selection of carefully curated rooms and find your new home.</p>
+        </section>
+        <section class="rooms-container">
+            <!-- Room cards will be dynamically added here -->
+        </section>
+    </main>
+    <div id="roomModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImage" src="/placeholder.svg" alt="Room Image">
+            <p id="modalDescription"></p>
+            <p id="modalPrice"></p>
+            <button id="rentButton" class="btn btn-primary">Rent</button>
+        </div>
+    </div>
+    <script src="rooms.js"></script>
+</body>
+</html>

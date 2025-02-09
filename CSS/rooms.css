@@ -1,0 +1,315 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: #e74c3c;
+}
+
+.btn-primary:hover {
+    background-color: #c0392b;
+}
+
+/* Rooms Landing Page */
+.rooms-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/random/1600x900?apartment') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px 80px;
+    margin-bottom: 40px;
+}
+
+.rooms-hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.rooms-hero p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Rooms Grid */
+.rooms-container {
+    padding: 0 20px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.room-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.room-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.room-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.room-info h3 {
+    margin: 0 0 10px;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.room-info p {
+    margin: 0;
+    color: #666;
+    font-size: 1.1em;
+}
+
+.room-price {
+    font-weight: bold;
+    color: #3498db;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+#modalImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#modalTitle {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#modalDescription {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#modalPrice {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+#rentButton {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .rooms-hero h1 {
+        font-size: 2.5em;
+    }
+
+    .rooms-hero p {
+        font-size: 1em;
+    }
+
+    .rooms-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .rooms-hero h1 {
+        font-size: 2em;
+    }
+}
+    .rooms-container {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px
+    }
+
+    /* ... (keep the existing styles up to the Rooms Grid section) ... */
+
+/* Rooms Grid */
+.rooms-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.room-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.room-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.room-info {
+    padding: 12px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.room-info h3 {
+    margin: 0 0 8px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.room-price {
+    font-weight: bold;
+    color: #3498db;
+    font-size: 0.9em;
+    margin-top: 8px;
+}
+
+/* ... (keep the existing Modal styles) ... */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .rooms-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .rooms-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ... (keep the rest of the existing styles) ... */
